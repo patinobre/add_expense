@@ -23,6 +23,24 @@ const Expenses = (props) => {
 
   });
 
+  // cria mensagem quando não há despesas no filtro
+  let expensesContent = <p> No expenses found.</p>;
+
+  if (filteredExpenses.length > 0) {
+
+    expensesContent = filteredExpenses.map(expense => (
+        
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+
+      ));
+
+  };
+
   //retorna o HTML/JSX
   return (
 
@@ -32,15 +50,9 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {filteredExpenses.map(expense => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-        ))}
-
+      
+      {expensesContent}
+      
     </div>
 
   );
