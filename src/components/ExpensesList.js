@@ -10,7 +10,7 @@ const ExpensesList = (props) => {
 
         return (
 
-            <h2 className="expenses-list__falback">
+            <h2 className="expenses-list__fallback">
                 Found no expenses.
             </h2>
 
