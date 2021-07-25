@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ExpensesFilter from './ExpensesFIlter'
 import ExpensesList from './ExpensesList'
+import ExpensesChart from './ExpensesChart'
 import './Expenses.css'
 
 // cria o componente Expenses
@@ -35,6 +36,8 @@ const Expenses = (props) => {
         onChangeFilter={filterChangeHandler}
       />
       
+      <ExpensesChart expenses={filteredExpenses} />
+
       <ExpensesList items={filteredExpenses} />
       
     </div>
